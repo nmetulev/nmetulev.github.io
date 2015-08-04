@@ -12,7 +12,9 @@
   background: #fafafa;
   border-radius: 0.1875em;
   border: 1px solid #f3f3f3;
-  color: #333333;
+  //nm
+  color: #9f9f9f;
+  //color: #333333;
   padding: 1em 1.5em;
 }
 
@@ -21,7 +23,7 @@
 }
 
 .pagination a:hover, .pagination a:focus {
-  background: white;
+  background: $new-background;
   color: #477dca;
 }
 

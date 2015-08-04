@@ -1,7 +1,12 @@
 // Typography
 $base-font-size: 14px !default;
 $bold-font-weight: bold !default;
-$font-family: 'Merriweather', 'PT Serif', Georgia, 'Times New Roman', serif !default;
+
+
+//$font-family: 'Merriweather', 'PT Serif', Georgia, 'Times New Roman', serif !default;
+//nm
+$font-family: "Source Sans Pro", sans-serif !default;
+
 $line-height: 1.5 !default;
 $heading-font-family: 'Lato', 'Helvetica Neue', Helvetica, sans-serif !default;
 $heading-font-weight: 900 !default;
@@ -52,9 +57,14 @@ $darken-2: rgba(#000,.125) !default;
 $darken-3: rgba(#000,.25) !default;
 $darken-4: rgba(#000,.5) !default;
 
+//nm
+$new-gray: #9f9f9f;
+$new-link: #c40;
+$new-background: #232323;
+
 // Links
-$link-color: $blue;
-$link-hover-color: darken($blue, 40%);
+$link-color: $new-link;
+$link-hover-color: darken($new-link, 40%);
 
 // Breakpoints
 $breakpoint-md: '(min-width: 52em)';
@@ -92,12 +102,12 @@ $form-field-padding-y: .5rem;
 $form-field-padding-x: .5rem;
 
 // Code
-$pre-border-radius: 0;
-$pre-background-color: #fafafa;
-$hljs-comment: $mid-gray;
-$hljs-keyword: $dark-gray;
-$hljs-number: $dark-green;
-$hljs-string: $red;
+$pre-border-radius: 5px;
+$pre-background-color: #bbb;
+$hljs-comment: $dark-green;
+$hljs-keyword: $blue;
+$hljs-number: $orange;
+$hljs-string: $dark-blue;
 $hljs-title: $red;
 $hljs-type: $dark-blue;
 $hljs-tag: $dark-blue;
@@ -109,7 +119,7 @@ $hljs-preprocessor: $mid-gray;
 $hljs-deletion: $light-pink;
 $hljs-addition: $light-green;
 $hljs-change: $dark-blue;
-$hljs-chunk: $light-gray;
+$hljs-chunk: $blue;
 
 // Footer
 $footer-border-top: thin solid #f3f3f3;
