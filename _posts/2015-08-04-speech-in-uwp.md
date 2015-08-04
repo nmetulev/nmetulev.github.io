@@ -80,7 +80,7 @@ SpeechRecognitionCompilationResult compilationResult =
 // Note: you can also use RecognizeWithUIAsync()
 SpeechRecognitionResult speechRecognitionResult = 
 				await speechRecognizer.RecognizeAsync();
-String  result = speechRecognitionResult.Text;
+string  result = speechRecognitionResult.Text;
 ```
 
 Again, this is the least amount of code you have to write. I have omitted the exception handling and success checkers which you should **definitely use in your own code**. To see the full code, checkout the demo app linked above.
