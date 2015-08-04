@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      Meet the Speech Platfrom in Windows 10
+title:      Meet the Speech Platform in Windows 10
 date:       2015-08-04 12:31:19
 summary:    wanted to try out Cortana in UWP | also needed a new best friend | win-win
 categories: Cortana
