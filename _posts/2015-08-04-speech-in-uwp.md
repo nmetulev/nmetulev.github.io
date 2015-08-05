@@ -294,7 +294,7 @@ Finally, we just need to add a new command in our VCD file from the previous sec
 	<ListenFor RequireAppName="BeforeOrAfterPhrase" >Let me tell you, {message}</ListenFor>
 	<ListenFor RequireAppName="BeforeOrAfterPhrase" >Did you know that {message}</ListenFor>
 	<VoiceCommandService Target="VoiceServiceEndpoint" />
-	</Command>
+</Command>
 ```
 
 Note that in this command we do not have the **Navigate** element and instead we have specified the Name to the AppService as a **VoiceCommandService**.
