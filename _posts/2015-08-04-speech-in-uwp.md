@@ -305,7 +305,7 @@ This is an oversimplified example, and I think it's worth saying that VoiceComma
 
 
 
-#Resources#
+# Resources #
 
 I know you might be searching the internet right now for more details than what I have provided in this post. Make sure to look at the demo app linked at the beginning of this post as it contains a full implementation of snippets in this post. In addition, these resources might take you to what you are looking for:
 
