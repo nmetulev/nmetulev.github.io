@@ -16,7 +16,7 @@ h6 {
   font-weight: $heading-font-weight;
   line-height: $heading-line-height;
   margin-top: 1em;
-  margin-bottom: .5em;
+  margin-bottom: .1em;
 }
 
 p,
@@ -52,17 +52,21 @@ hr {
 }
 
 blockquote {
-  margin-top: $space-3;
-  margin-bottom: $space-3;
+  //margin-top: $space-3;
+  //margin-bottom: $space-3;
   margin-left: 0;
-  padding-left: $space-2;
-  padding-right: $space-2;
+  //padding-left: $space-2;
+  //padding-right: $space-2;
 }
 
 blockquote,
 blockquote p {
   font-size: $h3;
   font-style: italic;
+}
+
+blockquote p {
+  margin-bottom: 0;
 }
 
 h1,
