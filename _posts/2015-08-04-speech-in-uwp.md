@@ -6,7 +6,9 @@ summary:    wanted to try out Cortana in UWP | also needed a new best friend | w
 categories: Cortana
 ---
 
-if you want to skip my boring intro (I won't get sad, I promise), [jump right into the good stuff](#walk) or [see the code](https://github.com/nmetulev/BestFriend). 
+If you want to skip my boring intro (I won't get sad, I promise), [jump right into the good stuff](#walk) or [see the code](https://github.com/nmetulev/BestFriend). 
+
+![Imgur](http://i.imgur.com/BP5EyKm.gif)
 
 Once [Build 2015](http://www.buildwindows.com/) was over in April, I was one of the lucky ones (or unlucky, depending on your viewpoint) that spent the month traveling, visiting different places around the world, sharing the knowledge of the Windows 10 Universal Windows Platform with those that were unable to come to the weirdly beautiful San Francisco. I went around the world twice, met thousands of people, and few even chuckled at my [Peek A Boo](https://github.com/nmetulev/PeekABoo) app.
 
@@ -23,10 +25,12 @@ It's perfect. I built a demo that that is very simple to understand, yet it cove
  3. **Cortana Invocation** - the ability for Cortana to start a Windows 10 application on your request 
  4. **Cortana Canvas** - the ability for Cortana to respond to a user on behalf of a Windows 10 application
 
-Now you might be wondering
+Now you might be wondering:
+
 >But Nikola, Cortana is not available in my area, why should I care?
 
-Well Bob, I'll tell you why:
+Well Steve, I'll tell you why:
+
 1. Not all APIs are Cortana APIs. Speech Synthesis and Speech Recognition do not require Cortana and are available in all areas.
 2. If your app supports Cortana invocation, it will still be able to be invoked without Cortana
 3. Your app users might be in areas where Cortana is supported
