@@ -3,7 +3,7 @@ layout:     post
 title:      Meet the Speech Platform in Windows 10
 date:       2015-08-05 12:31:19
 summary:    wanted to show the speech platform in the Universal Windows Platform | also needed a new best friend | win-win
-categories: Cortana
+permalink: /meet-the-speech-platform-in-windows-10/
 ---
 
 If you want to skip my boring intro (I won't get sad, I promise), [jump right into the good stuff](#synth) or [see the code](https://github.com/nmetulev/BestFriend). 
