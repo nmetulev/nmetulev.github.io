@@ -74,6 +74,8 @@ Of course, this is the simplest way to use the API, and you can get much better 
 
 The [SpeechRecognition](https://msdn.microsoft.com/en-us/library/windows.media.speechrecognition.speechrecognizer.aspx) APIs are really new to the desktop. The API allows a Windows 10 app to recognize the user speaking with or without providing a UI. What is amazing about it, it automatically detects when the user has stopped speaking and it simply returns a string that can be used throughout your app. It can't get simpler than that. 
 
+![Imgur](http://i.imgur.com/9ocrS9j.gif)
+
 Let me prove it to you. Here is the code to listen for the user speaking and get a string:
 
 ```csharp
@@ -96,7 +98,7 @@ In addition to recognizing text one time, you can also set up a continuous recog
 
 ```csharp
 SpeechRecognizer speechRecognizer = new SpeechRecognizer();
-speechRecognizer .Constraints.Add(
+speechRecognizer.Constraints.Add(
 	new SpeechRecognitionListConstraint(new List<String>() { "Start Listening" }));
 
 // Compile the new constraints
@@ -104,7 +106,7 @@ SpeechRecognitionCompilationResult compilationResult =
 	await speechRecognizer.CompileConstraintsAsync();
 
 // Subscribe to event when command is recognized
-speechRecognizer .ContinuousRecognitionSession.ResultGenerated +=
+speechRecognizer.ContinuousRecognitionSession.ResultGenerated +=
 	ContinuousRecognitionSession_ResultGenerated;
 
 // Start recognizing
@@ -129,10 +131,14 @@ private void ContinuousRecognitionSession_ResultGenerated(
 
 That is all you need to get started.
 
+<a name="invocation"></a>
+
 # Cortana App Invocation #
 
 ### using Windows.ApplicationModel.VoiceCommands; ###
 OK, now we are getting somewhere. For those that don't know by now, an app can be integrated with Cortana and Cortana can launch the application if a user asks nicely. It can even pass the string the user has used to open the app including parameters, so the app can do something contextually. This has been available on Windows Phone 8.1 with Cortana, and now is available on all Windows 10 devices that support Cortana.
+
+![Imgur](http://i.imgur.com/VD4DwFy.gif)
 
 To get started, you will need:
 
@@ -147,8 +153,7 @@ To get started, you will need:
 
     <Command Name="startChat">
       <Example> Best Friend, I want to talk </Example>
-      <ListenFor RequireAppName="BeforeOrAfterPhrase"> 
-I want to talk </ListenFor>
+      <ListenFor RequireAppName="BeforeOrAfterPhrase"> I want to talk </ListenFor>
       <ListenFor RequireAppName="BeforeOrAfterPhrase"> Can we talk? </ListenFor>
       <Feedback> Let's talk Best Friend </Feedback>
       <Navigate/>
@@ -202,11 +207,15 @@ protected override void OnActivated(IActivatedEventArgs e)
 
 **Note:** *startChat* parameter is the same as the Command Name in the VCD file.
 
+<a name="canvas"></a>
+
 # Cortana Canvas #
 
 ### using Windows.ApplicationModel.AppService; ###
 
 Finally, (and really the only completely new feature from the four here) a Windows 10 app can register with Cortana a Background Service that can respond directly to a user through Cortana without opening the app in the foreground. In my demo, for example, I can send a message by saying *Best Friend, Can I ask, how are you today?*, and get the response directly in the Cortana window. 
+
+![Imgur](http://i.imgur.com/8pFAF3D.gif)
 
 There are really two steps needed to get this working:
 
@@ -280,17 +289,21 @@ Once we have created the new Windows Runtime Component, we need to add the refer
 Finally, we just need to add a new command in our VCD file from the previous section
 
 ```xml
-<Command Name="sendMessage">
-	<Example>Let's chat</Example>
-	<ListenFor RequireAppName="BeforeOrAfterPhrase" >Can I ask, {message}</ListenFor>
+<Command Name="sendMessageInCanvas">
+	<Example>Best Friend, Let me tell you, you are nice!</Example>
 	<ListenFor RequireAppName="BeforeOrAfterPhrase" >Let me tell you, {message}</ListenFor>
+	<ListenFor RequireAppName="BeforeOrAfterPhrase" >Did you know that {message}</ListenFor>
 	<VoiceCommandService Target="VoiceServiceEndpoint" />
-</Command>
+	</Command>
 ```
 
 Note that in this command we do not have the **Navigate** element and instead we have specified the Name to the AppService as a **VoiceCommandService**.
 
-The only thing left is to run the app once to get the VCD registered and we no longer have to touch the keyboard again.
+This is an oversimplified example, and I think it's worth saying that VoiceCommandResponses can be very rich and are even able to display images that were rendered on the fly by a XamlRenderingBackgroundTask. Your background service can ask the user to choose an option and list different tiles, confirm an action, etc. In the Best Friend sample, I added a command that renders an image so you can see how that works.
+
+![Imgur](http://i.imgur.com/P3Uzi2v.gif)
+
+
 
 #Resources#
 
