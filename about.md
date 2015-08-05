@@ -4,6 +4,8 @@ title: about me
 permalink: /about/
 ---
 
-No idea where I'm going with this or if I will actualy do anything with this. 
+Just another Program Manager from Microsoft. Working on Developer Experience and Engineering Engagement. 
 
-If I've changed this page, I guess I've done something...
+I'm on [GitHub](https://github.com/nmetulev) and [Twitter](https://twitter.com/metulev)
+
+This is my personal site and all opinions expressed are my own.
