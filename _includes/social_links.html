@@ -1,14 +1,14 @@
 <div class="social-icons">
   <div class="left">
     {% if site.github_username %}
-      <a class="fa fa-github" href="https://github.com/{{ site.github_username }}"></a>
+      <a class="fa fa-github" href="https://github.com/{{ site.github_username }}" target="_blank"></a>
     {% endif %}
     {% if site.stackoverflow_id %}
       <a class="fa fa-stack-overflow" href="https://stackoverflow.com/users/{{ site.stackoverflow_id }}"></a>
     {% endif %}
-    <a class="fa fa-rss" href="{{ "/feed.xml" | prepend: site.baseurl }}"></a>
+    
     {% if site.twitter_username %}
-      <a class="fa fa-twitter" href="https://twitter.com/{{ site.twitter_username }}"></a>
+      <a class="fa fa-twitter" href="https://twitter.com/{{ site.twitter_username }}" target="_blank"></a>
     {% endif %}
     {% if site.google_plus_id %}
       <a class="fa fa-google-plus" href="https://plus.google.com/{{ site.google_plus_id }}/posts"></a>
@@ -25,6 +25,7 @@
     {% if site.medium_id %}
       <a class="fa fa-medium" href="https://medium.com/{{ site.medium_id }}"></a>
     {% endif %}
+    <a class="fa fa-rss" href="{{ "/feed.xml" | prepend: site.baseurl }}" target="_blank"></a>
   </div>
   <div class="right">
     {% if site.bitcoin_url %}

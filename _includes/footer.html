@@ -1,6 +1,8 @@
 <footer class="center">
   <div class="measure">
-     bottom
+     {% if site.show_social_icons %}
+        {% include social_links.html %}
+      {% endif %}
   </div>
   <script type="text/javascript" defer>
     var pres = document.getElementsByTagName("pre");
