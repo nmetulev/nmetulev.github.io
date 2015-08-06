@@ -10,8 +10,6 @@
     var innerHTMLs = [];
     var classNames = [];
     
-    console.log(pres.length);
-    
     for (var i=0, max = pres.length; i < max; i++)
     {
         var pre = pres[i];
@@ -24,7 +22,6 @@
             classNames.push("brush: " + pre.firstChild.className.substring(9));
         }
     }
-    console.log(presToModify.length);
     
     for (var i=0, max = presToModify.length; i < max; i++)
     {
