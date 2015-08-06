@@ -10,13 +10,15 @@ If you want to skip my boring intro (I won't get sad, I promise), [jump right in
 
 ![Imgur](http://i.imgur.com/BP5EyKm.gif)
 
-Once [Build 2015](http://www.buildwindows.com/) was over in April, I was one of the lucky ones (or unlucky, depending on your viewpoint) that spent the month traveling, visiting different places around the world, and sharing the knowledge of the Windows 10 Universal Windows Platform with those that missed out Build in the weirdly beautiful San Francisco. I went around the world twice, met thousands of people, and few even chuckled at my [Peek A Boo](https://github.com/nmetulev/PeekABoo) app.
+Once [Build 2015](http://www.buildwindows.com/) was over in April, I was one of the lucky ones (or unlucky, if you dislike airline meals) that spent the month traveling, visiting different places around the world, and sharing the knowledge of the Windows 10 Universal Windows Platform with those that missed out Build in the weirdly beautiful San Francisco. I went around the world twice, met thousands of people, and few even chuckled at my [Peek A Boo](https://github.com/nmetulev/PeekABoo) app.
 
 As Cortana is now available on many Windows 10 devices, [and coming to even more](https://www.youtube.com/watch?v=kZXvz9oDOmk), I naturally wanted to build a fun demo that showcased few of the main capabilities of the platform around speech and "personal assisting". As Terry Myerson said in one of the early introductions to Windows 10, ["Windows 10 is the first step to an era of more personal computing"](http://blogs.windows.com/bloggingwindows/2015/01/21/the-next-generation-of-windows-windows-10/). A solid voice and speech platform is a huge part of that first step.
 
-So I built my [Best Friend (github)](https://github.com/nmetulev/BestFriend). *What does it do?*, you might ask.
+So I built my [Best Friend](https://github.com/nmetulev/BestFriend). *What does it do?*, you might ask.
 
-It's simple. I wanted to create a demo that allows a user to message without even touching the keyboard. Yes, I know I can just use Skype for a real voice chat, but what's the fun in that? Anyway, I'm lazy, so I quickly found the simplest bot I could find on the internet and went with it (on the plus side, I didn't have to talk to a real person). In few hours I had a working app with everything I wanted: I could exchange messages with my bot, my app could speak the messages received, I could speak the messages I wanted sent, I could ask Cortana to start a chat with my bot, and I could even ask Cortana to send a quick message to my bot and read me the response without opening my app. 
+![Imgur](http://i.imgur.com/5Eww5el.png)
+
+It's simple. I wanted to create a demo that allows a user to message without even touching the keyboard. Yes, I know I can just use Skype for a real voice chat, but what's the fun in that? Anyway, I'm lazy, so I quickly found the simplest bot I could find on the internet and went with it; on the plus side, I didn't have to talk to a real person. In few hours I had a working app with everything I wanted: I could exchange messages with my bot, my app could speak the messages received, I could speak the messages I wanted sent, I could ask Cortana to start a chat with my bot, and I could even ask Cortana to send a quick message to my bot and read me the response without opening my app.
 
 It's perfect. I built a demo that that is very simple to understand, yet it covered the majority of the speech platform capabilities of Windows 10:
 
@@ -25,11 +27,13 @@ It's perfect. I built a demo that that is very simple to understand, yet it cove
  3. **[Cortana Invocation](#invocation)** - the ability for Cortana to start a Windows 10 application on your request 
  4. **[Cortana Canvas](#canvas)** - the ability for Cortana to respond to a user on behalf of a Windows 10 application
 
+If you want to see the demo in action, here is a [7 minute recording](https://channel9.msdn.com/Events/Build/build-tour-toronto/BUILDTO5) from the BuildTour in Toronto.
+
 Now you might be wondering:
 
 >But Nikola, Cortana is not available in my area, why should I care?
 
-Well Steve, I'll tell you why:
+Well Buddy, I'll tell you why:
 
 1. Not all APIs are Cortana APIs. Speech Synthesis and Speech Recognition do not require Cortana and are available in all areas.
 2. If your app supports Cortana invocation, it will still be able to be invoked without Cortana
@@ -83,12 +87,11 @@ SpeechRecognizer speechRecognizer = new SpeechRecognizer();
 
 // Compile the default dictionary
 SpeechRecognitionCompilationResult compilationResult = 
-		await speechRecognizer.CompileConstraintsAsync();
+										await speechRecognizer.CompileConstraintsAsync();
 
 // Start recognizing
 // Note: you can also use RecognizeWithUIAsync()
-SpeechRecognitionResult speechRecognitionResult = 
-		await speechRecognizer.RecognizeAsync();
+SpeechRecognitionResult speechRecognitionResult = await speechRecognizer.RecognizeAsync();
 string  result = speechRecognitionResult.Text;
 ```
 
@@ -102,8 +105,7 @@ speechRecognizer.Constraints.Add(
 	new SpeechRecognitionListConstraint(new List<String>() { "Start Listening" }));
 
 // Compile the new constraints
-SpeechRecognitionCompilationResult compilationResult = 
-	await speechRecognizer.CompileConstraintsAsync();
+SpeechRecognitionCompilationResult compilationResult = await speechRecognizer.CompileConstraintsAsync();
 
 // Subscribe to event when command is recognized
 speechRecognizer.ContinuousRecognitionSession.ResultGenerated +=
@@ -117,11 +119,11 @@ At this point, the continuous recognition is working and the app is listening to
 
 ```csharp
 private void ContinuousRecognitionSession_ResultGenerated(
-	SpeechContinuousRecognitionSession sender, 
-	SpeechContinuousRecognitionResultGeneratedEventArgs args)
+						SpeechContinuousRecognitionSession sender, 
+						SpeechContinuousRecognitionResultGeneratedEventArgs args)
 {
 	if (args.Result.Text == "Start Listening")
-        {
+	{
 		// if you need to do something on the UI thread, 
 		// make sure to use a dispatcher
 		SetListening(true);
@@ -307,7 +309,7 @@ This is an oversimplified example, and I think it's worth saying that VoiceComma
 
 # Resources #
 
-I know you might be searching the internet right now for more details than what I have provided in this post. Make sure to look at the demo app linked at the beginning of this post as it contains a full implementation of snippets in this post. In addition, these resources might take you to what you are looking for:
+I know you might be searching the internet right now for more details than what I have provided in this post. Make sure to look at the [demo app](https://github.com/nmetulev/BestFriend) as it contains a full implementation of snippets in this post. In addition, these resources might take you to what you are looking for:
 
 - [Cortana Voice Command Samples](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/CortanaVoiceCommand)
 - [Speech Recognition and Synthesis Samples](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/SpeechRecognitionAndSynthesis)
