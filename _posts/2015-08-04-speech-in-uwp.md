@@ -105,7 +105,8 @@ speechRecognizer.Constraints.Add(
 	new SpeechRecognitionListConstraint(new List<String>() { "Start Listening" }));
 
 // Compile the new constraints
-SpeechRecognitionCompilationResult compilationResult = await speechRecognizer.CompileConstraintsAsync();
+SpeechRecognitionCompilationResult compilationResult = 
+									await speechRecognizer.CompileConstraintsAsync();
 
 // Subscribe to event when command is recognized
 speechRecognizer.ContinuousRecognitionSession.ResultGenerated +=
