@@ -12,7 +12,7 @@ It feels like everyone around me is writing UWP apps now, and talking about it. 
 
 Anyway, during a very intense discussion about visual effects and shaders, the discussion naturally evolved towards how to use Win2D to improve the UX of an app, and whether it is possible to, for example, blur the whole UI. Half hour later, I was back at my dev machine with a working solution. The solution is so simple, it's a crime not to share it. So read on if interested.
 
-# RenderTargetBitmap #
+## RenderTargetBitmap ##
 
 ### using Windows.UI.Xaml.Media.Imaging; ###
 
@@ -59,7 +59,7 @@ public static async Task<IRandomAccessStream> RenderToRandomAccessStream(this UI
 
 ** Now, before going crazy with this, make sure to read through the [Remarks](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.media.imaging.rendertargetbitmap#xaml_visuals_and_rendertargetbitmap_capture_capabilities). There are some restriction around what can be rendered that you should know about, but luckily, the large majority of cases will work just fine. 
 
-# Win2D #
+## Win2D ##
  
 ### using Microsoft.Graphics.Canvas; ###
 
