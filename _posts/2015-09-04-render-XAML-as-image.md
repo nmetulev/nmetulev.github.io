@@ -73,7 +73,9 @@ using (var stream = await Content.RenderToRandomAccessStream())
     var device = new CanvasDevice();
     var bitmap = await CanvasBitmap.LoadAsync(device, stream);
 
-    var renderer = new CanvasRenderTarget(device, bitmap.SizeInPixels.Width, bitmap.SizeInPixels.Height, bitmap.Dpi);
+    var renderer = new CanvasRenderTarget(device, 
+                                          bitmap.SizeInPixels.Width, 
+                                          bitmap.SizeInPixels.Height, bitmap.Dpi);
 
     using (var ds = renderer.CreateDrawingSession())
     {
