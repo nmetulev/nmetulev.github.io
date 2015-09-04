@@ -6,7 +6,7 @@ summary:    Saving XAML Visual Tree to an image allows for some fun scenarios, e
 permalink: /RenderTargetBitmap/
 ---
 
-[Frosted Glass Effect](http://i.imgur.com/48GXe09.gifv)
+![Frosted Glass Effect](http://i.imgur.com/48GXe09.gif)
 
 
 
