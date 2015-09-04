@@ -98,5 +98,11 @@ using (var stream = await Content.RenderToRandomAccessStream())
 So take the stream from the previous step, pass it to Win2D for some magical processing, and grab a refreshing drink because your work is done. 
 
 In the above animation, I used this exact same code to apply the blured image to a SplitView.Pane Background right before the pane is opened (the content of the SplitView is just a WebView because I'm too lazy to create real UI). It is trivial to combine multiple effects for super cool experiences and there are thousands of variations. I'd love to see what you create with this.
+
+## Resources ##
+* [RenderTargetBitmap](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.media.imaging.rendertargetbitmap)
+* [Win2D Github](https://github.com/Microsoft/Win2D)
+* [Win2D Blog](http://blogs.msdn.com/b/win2d/)
+* [Introducing Win2D: DirectX-Powered Drawing in C# - Build 2015](https://channel9.msdn.com/Events/Build/2015/2-631)
  
 Keep hacking my friends!
