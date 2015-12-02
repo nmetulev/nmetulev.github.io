@@ -19,7 +19,7 @@ Comet is an open source library for .NET/XAML Universal Windows Apps that attemp
 
 Today I'm releasing **v0.1**. I'm starting small with a goal to grow. Initially, Comet contains:
 
-### RefreshableListView ###
+### PullToRefreshListView ###
 
 Pull to Refresh is one of the most used gestures on all mobile touch platforms, but it's not something that is provided out of box for XAML. I've seen many different implementations for XAML, and there is even an [official sample by Microsoft](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlPullToRefresh) of a simple implementation. However, I've never been satisfied by the performance, behavior, or functionality of these implementations. I created my own:
 
