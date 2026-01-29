@@ -1,0 +1,42 @@
+---
+import '../styles/global.css';
+
+interface Props {
+	title?: string;
+	description?: string;
+}
+
+const { 
+	title = "Nikola Metulev", 
+	description = "Software Engineer & Developer Advocate at Microsoft. Speaker at Build, Ignite, and more."
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="en" class="">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="icon" href="/favicon.ico" />
+		<meta name="generator" content={Astro.generator} />
+		<meta name="description" content={description} />
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
+		<meta property="og:image" content="https://pbs.twimg.com/profile_images/861791187019079684/_-blnGB8_400x400.jpg" />
+		<meta name="twitter:card" content="summary" />
+		<meta name="twitter:site" content="@metulev" />
+		<title>{title}</title>
+		<script is:inline>
+			// Check for saved theme or system preference
+			const savedTheme = localStorage.getItem('theme');
+			const systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+			if (savedTheme === 'dark' || (!savedTheme && systemDark)) {
+				document.documentElement.classList.add('dark');
+			}
+		</script>
+	</head>
+	<body class="min-h-screen bg-stone-100 dark:bg-stone-900 transition-colors duration-300">
+		<slot />
+	</body>
+</html>
